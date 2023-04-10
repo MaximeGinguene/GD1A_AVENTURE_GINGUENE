@@ -40,6 +40,24 @@ var snake= true;
 var key = {};
 const PLAYER_SPEED = 200;
 key.snake_anim = true;
+let playerMoney = 0;
+
+
+function removeMoney(amount) {
+    if (playerMoney >= amount) {
+      playerMoney -= amount;
+      updateMoneyDisplay(); // mettre à jour l'affichage de l'argent
+      return true; // retourner vrai si l'opération a réussi
+    } else {
+      return false; // retourner faux si le joueur n'a pas assez d'argent
+    }
+}
+
+
+function addMoney(amount) {
+    playerMoney += amount;
+    updateMoneyDisplay(); // mettre à jour l'affichage de l'argent
+}
 
 
 function collectibleHandler(snake, collectible) {
