@@ -92,6 +92,8 @@ function preload() {
   this.load.image("PNJ","assets/pngrencontré.png");
   this.load.image("interraction_mechant1","assets/interraction_mechant1.png");
   this.load.image("UIlife","assets/UI_life_1.png");
+  this.load.image("barreui","assets/barreui.png");
+  
 
   
 }
@@ -99,8 +101,8 @@ function preload() {
 
 // Création des éléments de jeu
 function create() {
-  var music = this.sound.add("musique_theme");
-  music.play();
+  //var music = this.sound.add("musique_theme");
+  //music.play();
 
   //ajout de la map
   const map = this.add.tilemap("map");
@@ -195,7 +197,9 @@ function create() {
   })
 
 
-  this.add.image((50),50, "UIlife").setOrigin(0,0).setScrollFactor(0);
+  this.add.image(0,880, "barreui").setOrigin(0,0).setScrollFactor(0).setDepth(10) // Pour que la profondeur de mon ui soit supérieur à celle de mon jeu.
+  this.add.image(950,910, "UIlife").setOrigin(0,0).setScrollFactor(0).setDepth(10) // Pour que la profondeur de mon ui soit supérieur à celle de mon jeu.
+  this.add.image(1550,975, "piece").setOrigin(0,0).setScrollFactor(0).setDepth(10) // Pour que la profondeur de mon ui soit supérieur à celle de mon jeu.
   
 
     
