@@ -90,7 +90,7 @@ function preload() {
   this.load.spritesheet('snake', 'assets/Snake.gif', { frameWidth: 32, frameHeight: 32 });
   this.load.audio ('musique_theme', 'assets/ancient_egypt.mp3')
   this.load.image("PNJ","assets/pngrencontré.png");
-  this.load.image("interraction_mechant1","assets/interraction_mechant1.png");
+  this.load.image("interraction_villageois","assets/interraction_villageois.png");
   this.load.image("UIlife","assets/UI_life_1.png");
   this.load.image("barreui","assets/barreui.png");
   
@@ -101,8 +101,8 @@ function preload() {
 
 // Création des éléments de jeu
 function create() {
-  //var music = this.sound.add("musique_theme");
-  //music.play();
+  var music = this.sound.add("musique_theme");
+  music.play();
 
   //ajout de la map
   const map = this.add.tilemap("map");
@@ -191,7 +191,7 @@ function create() {
     this.physics.add.collider(this.player, this.snake, collisionHandler, null, this);
 
     this.add.image(2600,2600, "PNJ").setInteractive().on("pointerdown",()=>{
-    this.interractionbarman=this.add.image(2600,2600,"interraction_mechant1").setInteractive().on("pointerdown",()=>{
+    this.interractionbarman=this.add.image(2600,2600,"interraction_villageois").setInteractive().on("pointerdown",()=>{
       this.interractionbarman.destroy()
     })
   })
